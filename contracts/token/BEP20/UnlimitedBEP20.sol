@@ -14,17 +14,17 @@ import "../../service/ServicePayer.sol";
 contract UnlimitedBEP20 is BEP20Mintable, BEP20Burnable, ServicePayer {
 
     constructor (
-        string memory name,
-        string memory symbol,
+        string Metagame coin,
+        string MGC,
         uint8 decimals,
         uint256 initialBalance,
         address payable feeReceiver
     )
-      BEP20(name, symbol)
+      BEP20(Metagame coin, MGC)
       ServicePayer(feeReceiver, "UnlimitedBEP20")
       payable
     {
-        _setupDecimals(decimals);
+        _setupDecimals(unit8);
         _mint(_msgSender(), initialBalance);
     }
 
